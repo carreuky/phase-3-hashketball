@@ -1,4 +1,6 @@
 # Write your code below game_hash
+require 'pry'
+
 def game_hash
   {
     home: {
@@ -124,6 +126,22 @@ def game_hash
       ]
     }
   }
+end
+
+def num_points_scored(name)
+  game_hash.find do |team|
+  team[:players].find do |player|
+  if !player[:player_name].icludes?(name)
+    next
+  end
+  return player[:points]
+end
+end
+  "No such team found"
+  end
+end
+end
+end
 end
 
 # Write code here
